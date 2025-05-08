@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Home Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body class="admin-body">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="admin-profile">
+                <img src="images/man.png" alt="Admin Avatar" class="admin-avatar">
+                <h3 id="adminName">Admin</h3>
+                <p id="adminEmail"></p>
+            </div>
+            <nav class="admin-nav">
+                <a href="#" class="nav-item active" data-section="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Dashboard
+                </a>
+                <a href="#" class="nav-item" data-section="services">
+                    <i class="fas fa-tools"></i>
+                    Services
+                </a>
+                <a href="#" class="nav-item" data-section="bookings">
+                    <i class="fas fa-calendar-check"></i>
+                    Bookings
+                </a>
+                <a href="#" class="nav-item" data-section="users">
+                    <i class="fas fa-users"></i>
+                    Users
+                </a>
+                <a href="#" class="nav-item" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    Settings
+                </a>
+                <a href="#" class="nav-item" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Admin Dashboard</h1>
+                <div class="header-actions">
+                    <button class="notifications-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">1</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Dashboard Overview -->
+            <section id="dashboard" class="dashboard-section active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Total Users</h3>
+                        <p id="totalUsers">...</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-user-shield"></i>
+                        <h3>Service Providers</h3>
+                        <p id="totalProviders">...</p>
+                    </div>                    
+                    <div class="stat-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <h3>Active Bookings</h3>
+                        <p>56</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-tools"></i>
+                        <h3>Services</h3>
+                        <p>8</p>
+                    </div>
+                </div>
+
+                <div class="recent-activity">
+                    <h2>Recent Bookings</h2>
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Customer</th>
+                                <th>Service</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#1234</td>
+                                <td>John Doe</td>
+                                <td>Plumbing</td>
+                                <td>2024-03-15</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                                <td>
+                                    <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#1235</td>
+                                <td>Jane Smith</td>
+                                <td>Electrical</td>
+                                <td>2024-03-14</td>
+                                <td><span class="status-badge completed">Completed</span></td>
+                                <td>
+                                    <button class="action-btn view-btn"><i class="fas fa-eye"></i></button>
+                                    <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                    <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Manage Services</h2>
+                    <button class="add-btn"><i class="fas fa-plus"></i> Add Service</button>
+                </div>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Service Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#001</td>
+                            <td>Plumbing Repair</td>
+                            <td>Plumbing</td>
+                            <td>$80/hr</td>
+                            <td><span class="status-badge active">Active</span></td>
+                            <td>
+                                <button class="action-btn edit-btn"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn delete-btn"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Bookings Section -->
+            <section id="bookings" class="dashboard-section">
+                <div class="section-header">
+                    <h2>All Bookings</h2>
+                    <div class="filter-controls">
+                        <select class="filter-select">
+                            <option value="all">All Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                        <input type="date" class="date-filter">
+                    </div>
+                </div>
+                <!-- Booking table will be populated dynamically -->
+            </section>
+
+            <!-- Users Section -->
+            <section id="users" class="dashboard-section">
+                <div class="section-header">
+                    <h2>User Management</h2>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Search users...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <table id="userTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Mobile</th>
+                            <th>Created</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Users will be injected here by JS -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="dashboard-section">
+                <h2>Dashboard Settings</h2>
+                <div class="settings-grid">
+                    <div class="settings-card">
+                        <h3>Profile Settings</h3>
+                        <form id="profileForm">
+                            <div class="form-group">
+                                <label>Admin Name</label>
+                                <input type="text" value="Admin" id="adminNameInput">
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" value="admin@homeservices.com" readonly>
+                            </div>
+                            <button type="submit" class="save-btn">Save Changes</button>
+                        </form>
+                    </div>
+                    <div class="settings-card">
+                        <h3>Notification Settings</h3>
+                        <div class="setting-option">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                            <span>Email Notifications</span>
+                        </div>
+                        <div class="setting-option">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                            <span>Browser Notifications</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const isAdmin = localStorage.getItem('isAdmin');
+            if (isAdmin !== 'true') {
+                window.location.href = 'signin.html';
+                return;
+            }
+    
+            const adminEmail = localStorage.getItem('adminEmail');
+            document.getElementById('adminEmail').textContent = adminEmail;
+    
+            initializeDashboard();
+        }
+    
+        async function initializeDashboard() {
+            const navItems = document.querySelectorAll('.nav-item');
+            const sections = document.querySelectorAll('.dashboard-section');
+    
+            navItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    if (this.id === 'logoutBtn') {
+                        handleLogout();
+                        return;
+                    }
+    
+                    const targetSection = this.getAttribute('data-section');
+                    navItems.forEach(nav => nav.classList.remove('active'));
+                    this.classList.add('active');
+    
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                        if (section.id === targetSection) {
+                            section.classList.add('active');
+                        }
+                    });
+                });
+            });
+    
+            // Fetch total users
+            try {
+                const userRes = await fetch("http://localhost:5000/api/users");
+                const userData = await userRes.json();
+                document.getElementById("totalUsers").textContent = userData.count;
+            } catch (err) {
+                console.error("Error fetching users:", err);
+                document.getElementById("totalUsers").textContent = "Error";
+            }
+
+            // Fetch total service providers
+            try {
+                const providerRes = await fetch("http://localhost:5000/api/providers");
+                const providerData = await providerRes.json();
+                document.getElementById("totalProviders").textContent = providerData.count;
+            } catch (err) {
+                console.error("Error fetching providers:", err);
+                document.getElementById("totalProviders").textContent = "Error";
+            }
+
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchUsers();
+
+            // Search functionality
+            document.getElementById('searchInput').addEventListener('input', function () {
+                const filter = this.value.toLowerCase();
+                const rows = document.querySelectorAll('#userTable tbody tr');
+                rows.forEach(row => {
+                    const text = row.innerText.toLowerCase();
+                    row.style.display = text.includes(filter) ? '' : 'none';
+                });
+            });
+        });
+
+        //Fetch users data
+        function fetchUsers() {
+            fetch('/api/usersdata')
+                .then(res => res.json())
+                .then(data => {
+                    const tbody = document.querySelector('#userTable tbody');
+                    tbody.innerHTML = ''; // Clear previous rows
+                    data.forEach(user => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${user.id}</td>
+                            <td>${user.username}</td>
+                            <td>${user.mobile}</td>
+                            <td>${user.created_at}</td>
+                            <td><button onclick="deleteUser(${user.id})"><i class="fas fa-trash"></i></button></td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                })
+                .catch(err => console.error('Error fetching users:', err));
+        }
+
+        function deleteUser(userId) {
+            if (!confirm('Are you sure you want to delete this user?')) return;
+
+            fetch(`/api/users/${userId}`, {
+                method: 'DELETE'
+            })
+            .then(res => {
+                if (res.ok) {
+                    fetchUsers(); // Refresh table
+                } else {
+                    alert('Failed to delete user.');
+                }
+            });
+        }
+    
+        function handleLogout() {
+            localStorage.removeItem('isAdmin');
+            localStorage.removeItem('adminEmail');
+            window.location.href = 'index.html';
+        }
+    </script>    
+</body>
+</html> 

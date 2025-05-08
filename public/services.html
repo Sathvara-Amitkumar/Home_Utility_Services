@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Home Utility Service</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="services-styles.css">
+    <script src="https://kit.fontawesome.com/9052322e2b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="spinner"></div>
+        <div class="preloader-text">Home Utility Services</div>
+    </div>
+
+    <div id="content">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="Images/logo.png" alt="Home Utility Service Logo" class="logo">
+                </a>
+                <div class="slogan">Home Utility Services</div>
+            </div>
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li id="authOption"><a href="#" onclick="showLoginOverlay()">Log In</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <!-- <section class="hero-section">
+            <div class="hero-content">
+                <h1>Our Services</h1>
+                <p>Professional Home Services at Your Fingertips</p>
+            </div>
+        </section> -->
+
+        <!-- Services Grid Section -->
+        <section class="services-grid-section">
+            <div class="section-title">
+                <h2>What We Offer</h2>
+                <p>Comprehensive home services tailored to your needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>Plumbing Services</h3>
+                    <p>Expert plumbing solutions for your home, from repairs to installations</p>
+                    <ul class="service-features">
+                        <li>Leak Detection & Repair</li>
+                        <li>Pipe Installation</li>
+                        <li>Drain Cleaning</li>
+                        <li>Water Heater Services</li>
+                    </ul>
+                    <a href="contact.html" class="service-btn">Book Now</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Electrical Services</h3>
+                    <p>Complete electrical solutions for your home and office needs</p>
+                    <ul class="service-features">
+                        <li>Wiring Installation</li>
+                        <li>Circuit Repairs</li>
+                        <li>Lighting Installation</li>
+                        <li>Safety Inspections</li>
+                    </ul>
+                    <a href="contact.html" class="service-btn">Book Now</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3>Cleaning Services</h3>
+                    <p>Professional cleaning services to keep your space spotless</p>
+                    <ul class="service-features">
+                        <li>Deep Cleaning</li>
+                        <li>Carpet Cleaning</li>
+                        <li>Window Cleaning</li>
+                        <li>Sanitization</li>
+                    </ul>
+                    <a href="contact.html" class="service-btn">Book Now</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Security Systems</h3>
+                    <p>Advanced security solutions to protect your home</p>
+                    <ul class="service-features">
+                        <li>CCTV Installation</li>
+                        <li>Alarm Systems</li>
+                        <li>Access Control</li>
+                        <li>24/7 Monitoring</li>
+                    </ul>
+                    <a href="contact.html" class="service-btn">Book Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process-section">
+            <div class="section-title">
+                <h2>How It Works</h2>
+                <p>Simple steps to get your service</p>
+            </div>
+            <div class="process-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Book Service</h3>
+                    <p>Choose your service and schedule a convenient time</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3>Expert Assignment</h3>
+                    <p>We assign the best professional for your task</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Service Delivery</h3>
+                    <p>Get your service done by experts</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3>Satisfaction</h3>
+                    <p>Rate our service and share feedback</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-section">
+            <div class="section-title">
+                <h2>Why Choose Us</h2>
+                <p>What makes us stand out from the rest</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>24/7 Service</h3>
+                    <p>Available round the clock for emergencies</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Certified Experts</h3>
+                    <p>Highly trained and certified professionals</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tag"></i>
+                    <h3>Best Pricing</h3>
+                    <p>Competitive rates with no hidden charges</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-history"></i>
+                    <h3>Quick Response</h3>
+                    <p>Fast and reliable service delivery</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h2>About Us</h2>
+                    <p>Your trusted partner for all home service needs. We provide quality service with guaranteed satisfaction.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section quick-links">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h2>Contact Us</h2>
+                    <p>📍 UVPCE, Ganpat University, kherva</p>
+                    <p>📞 +91 7874268098</p>
+                    <p>📧 support@homeutility.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Home Utility Services. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

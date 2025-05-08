@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Utility Management - Virtual AI Assistant</title>
+    <link rel="stylesheet" href="assis.css">
+    <script src="assis.js"></script>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chat Icon" />
+            Home Utility Services
+        </div>
+        <div class="chat-body" id="chat-body">
+            <div class="message bot">
+                Hello I am Niva automated chatBot! How can I assist you today? Please choose an option below:
+            </div>
+            <div class="options-container">
+                <button class="option-button" onclick="sendMessage('I need an electrician.')">Electrician</button>
+                <button class="option-button" onclick="sendMessage('I need a plumber.')">Plumber</button>
+                <button class="option-button" onclick="sendMessage('I need IT support.')">IT Support</button>
+                <button class="option-button" onclick="sendMessage('I need to track my order.')">Track Order</button>
+                <button class="option-button" onclick="sendMessage('I need a painter.')">Painter</button>
+                <button class="option-button" onclick="sendMessage('I need a cleaner.')">Cleaner</button>
+                <button class="option-button" onclick="sendMessage('I need a gardener.')">Gardener</button>
+                <button class="option-button" onclick="sendMessage('I need an HVAC technician.')">HVAC Technician</button>
+                <!-- <button class="option-button" onclick="sendMessage('I need a locksmith.')">Locksmith</button>
+                <button class="option-button" onclick="sendMessage('I need a roofer.')">Roofer</button>
+                <button class="option-button" onclick="sendMessage('I need a pest control service.')">Pest Control</button>
+                <button class="option-button" onclick="sendMessage('I need a mover.')">Mover</button>
+                <button class="option-button" onclick="sendMessage('I need a security expert.')">Security Expert</button>
+                <button class="option-button" onclick="sendMessage('I need an appliance repair technician.')">Appliance Repair</button>
+                <button class="option-button" onclick="sendMessage('I need a flooring specialist.')">Flooring Specialist</button> -->
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message here..." />
+            <button onclick="sendMessage()">
+                Send <img src="https://img.icons8.com/ios-filled/50/ffffff/paper-plane.png" alt="Send Icon" />
+            </button>
+        </div>
+    </div>
+</body>
+</html>

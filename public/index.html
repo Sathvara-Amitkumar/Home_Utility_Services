@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Utility Service</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="shortcut icon"
+      href="Images/logoclear-removebg.png"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/9052322e2b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="preloader">
+      <div class="spinner"></div>
+      <div class="preloader-text">Home Utility Services</div>
+    </div>
+
+    <!-- Login Overlay -->
+    <div id="loginOverlay" class="overlay">
+      <div class="overlay-content">
+        <span class="close-btn" onclick="closeLoginOverlay()">&times;</span>
+        <h2>Sign In</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginUsername">Email:</label>
+            <input type="email" id="loginUsername" name="username" required placeholder="enter your email">
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" name="password" required placeholder="enter your password">
+          </div>
+
+          <button type="submit" class="submit-btn">Sign In</button>
+        </form>
+        <p>Don't have an account? <a href="#" onclick="showSignupOverlay()">Register here</a></p>
+      </div>
+    </div>
+
+    <!-- Signup Overlay -->
+    <div id="signupOverlay" class="overlay">
+      <div class="overlay-content">
+        <span class="close-btn" onclick="closeSignupOverlay()">&times;</span>
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+          <div class="form-group">
+            <label for="signupUsername">Username(Email):</label>
+            <input type="text" id="signupUsername" name="username" required>
+          </div>
+
+          <div class="form-group">
+            <label for="signupMobile">Mobile Number:</label>
+            <input type="tel" id="signupMobile" name="mobile" required>
+          </div>
+
+          <div class="form-group">
+            <label for="signupPassword">Password:</label>
+            <input type="password" id="signupPassword" name="password" required>
+          </div>
+
+          <div class="form-group">
+            <label for="signupConfirmPassword">Confirm Password:</label>
+            <input type="password" id="signupConfirmPassword" name="confirmPassword" required>
+          </div>
+
+          <div class="form-group">
+            <label for="signupUserType">Sign Up As:</label>
+            <select id="signupUserType" name="userType" required>
+              <option value="User">User</option>
+              <option value="ServiceProvider">Service Provider</option>
+            </select>
+          </div>
+
+          <button type="submit" class="submit-btn">Register</button>
+        </form>
+        <p>Already have an account? <a href="#" onclick="showLoginOverlay()">Login here</a></p>
+      </div>
+    </div>
+
+    <!-- Edit Profile Overlay -->
+    <div id="editProfileOverlay" class="overlay">
+        <div class="overlay-content profile-edit-content">
+            <span class="close-btn" onclick="closeEditProfileOverlay()">&times;</span>
+            <form id="editProfileForm">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <div class="avatar-preview">
+                            <span id="avatarInitial"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                    <small class="validation-message"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" required>
+                    <small class="validation-message">Enter a 10-digit phone number</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" readonly>
+                    <small class="helper-text">Email cannot be changed</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="about">About Me</label>
+                    <textarea id="about" name="about" rows="3" placeholder="Tell us about yourself"></textarea>
+                    <small class="validation-message"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address">
+                    <small class="validation-message"></small>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn" onclick="closeEditProfileOverlay()">Cancel</button>
+                    <button type="submit" class="save-btn">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="content">
+      <header class="header">
+        <div class="logo-container">
+          <a href="index.html">
+            <img
+              src="Images/logo.png"
+              alt="Home Utility Service Logo"
+              class="logo"
+            />
+          </a>
+          <div class="slogan">Home Utility Services</div>
+        </div>
+        <nav class="nav-bar">
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li id="authOption"><a href="#" onclick="showLoginOverlay()">Log In</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Your One-Stop Solution for Home Services</h1>
+          <p>Professional, reliable, and trusted home services at your fingertips</p>
+          <div class="hero-buttons">
+            <a href="services.html" class="primary-btn">Explore Services</a>
+            <a href="#how-it-works" class="secondary-btn">How It Works</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="container">
+          <div class="feature-card">
+            <i class="fas fa-tools"></i>
+            <h3>Expert Services</h3>
+            <p>Professional and verified service providers for all your home needs</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-clock"></i>
+            <h3>24/7 Support</h3>
+            <p>Round-the-clock assistance for emergency services</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Guaranteed Quality</h3>
+            <p>100% satisfaction guaranteed with our service warranty</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps-container">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Choose Service</h3>
+            <p>Select from our wide range of home services</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Book Appointment</h3>
+            <p>Schedule a convenient time for service</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Get Service</h3>
+            <p>Our professional will arrive and complete the job</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="popular-services">
+        <h2>Popular Services</h2>
+        <div class="service-grid">
+          <div class="service-item">
+            <img src="Images/s1.jpg" alt="Plumbing Services">
+            <h3>Plumbing</h3>
+            <a href="services.html#plumbing" class="service-link">Learn More</a>
+          </div>
+          <div class="service-item">
+            <img src="Images/s2.jpg" alt="Electrical Services">
+            <h3>Electrical</h3>
+            <a href="services.html#electrical" class="service-link">Learn More</a>
+          </div>
+          <div class="service-item">
+            <img src="Images/s3.jpg" alt="Cleaning Services">
+            <h3>Cleaning</h3>
+            <a href="services.html#cleaning" class="service-link">Learn More</a>
+          </div>
+          <div class="service-item">
+            <img src="Images/s4.jpg" alt="Painting Services">
+            <h3>Painting</h3>
+            <a href="services.html#painting" class="service-link">Learn More</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-section">
+            <h2>About Us</h2>
+            <p>Your trusted partner for all home service needs. We provide quality service with guaranteed satisfaction.</p>
+          </div>
+          <div class="footer-section quick-links">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h2>Connect With Us</h2>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Home Utility Services. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
